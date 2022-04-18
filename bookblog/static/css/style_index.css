@@ -1,0 +1,304 @@
+body {
+	background: #fde0e0;
+	font-family: 'Times New Roman';
+	margin:auto;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Header menu */
+.header_inner {
+	display: flex;
+	justify-content: center;
+}
+
+.nav_link {
+	display: inline-block;
+	margin: 0 auto;
+	margin-left: 16px;
+
+}
+
+.rcorners {
+  border-radius: 11px;
+  border: 2px solid #472500;
+  width: 100px;
+  height: 28px;
+  color: #472500;
+  text-align: center;
+  padding: 1px;
+  font-size: 14pt;
+}
+
+#logo {
+  background: #472500;
+  width: 65px;
+  height: 65px;
+  color: #FFF;
+  font-size: 54pt;
+  text-align: center;
+  line-height: 0.9;
+  vertical-align: middle;
+}
+
+/* Intro */
+.intro {
+	width: 100%;
+	height: 85vh;
+}
+
+/* Container */
+.container {
+	width: 100%;
+	max-width: 1320px;
+	margin: 35px auto;
+}
+
+.fp_text {
+	position: absolute;
+	z-index: 100;
+	font-weight:normal;
+}
+
+.overlay {
+	margin-left: 680px;
+	margin-top: -500px;
+	font-size: 115pt;
+	color: #FFF;
+	opacity: 38%;
+}
+
+.overlayed {
+	margin-left: 685px;
+	margin-top: -360px;
+	font-size: 55pt;
+	color: #472500;
+}
+
+
+.search {
+	width: 40px;
+	height: 40px;
+	position: fixed;
+	bottom: 25px;
+	right: 32px;
+	background: #FFF;
+	border: 2px solid #472500;
+	border-radius: 60px;
+	transition: 0.4s;
+	overflow: hidden;
+}
+
+.search .icon {
+	position: fixed;
+	bottom: 30px;
+	right: 36px;
+	width: 28px;
+	height: 28px;
+	border-radius: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.search .icon::before {
+	content: '';
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	border: 3px solid #472500;
+	border-radius: 60%;
+	transform: translate(-4px,-3px);
+}
+
+.search .icon::after {
+	content: '';
+	position: absolute;
+	width: 3px;
+	height: 8px;
+	background: #472500;
+	transform: translate(4px,6px) rotate(315deg);
+}
+
+.search.active {
+	width: 340px;
+}
+
+.search .input {
+	display: none;
+}
+
+.search .input-active {
+	display: block;
+	position: relative;
+	width: 280px;
+	height: 28px;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.search .input-active #mysearch {
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	font-size: 18px;
+}
+
+
+/*Section Interests */
+.interests {
+	background: #FFF;
+	width: 100%;
+	padding: 80px 0;
+}
+
+.interests_header {
+	text-align: center;
+}
+
+.interests_title {
+	font-size: 50pt;
+	font-weight:normal;
+	color: #472500;
+}
+
+.interests_subtitle {
+	font-size: 20pt;
+	font-weight:normal;
+	color: #472500;
+	margin-top: 30px;
+}
+
+/* About */
+.about {
+	display: flex;
+	justify-content: space-between;
+}
+
+.about_item {
+	display: inline-block;
+	margin: 70px auto 0;
+	text-align: center;
+	font-size: 20pt;
+	color: #472500 ;
+}
+
+/*Section Genres */
+.genres {
+	width: 100%;
+	padding: 40px 0 60px;
+}
+
+.genres_header {
+	text-align: center;
+}
+
+.genres_title {
+	font-size: 50pt;
+	font-weight: normal;
+	color: #472500;
+}
+
+/* Carousel */
+.carousel {
+	position: relative;
+	margin: 70px auto;
+}
+
+.carousel_item {
+	display: none;
+}
+
+.carousel_item--selected {
+	display: block;
+	justify-content: center;
+	text-align: center;
+}
+
+.genre_name {
+	margin-top: 10px;
+	font-size: 24pt;
+}
+
+.carousel_nav {
+	width: 100%;
+	padding: 0px 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+}
+
+.carousel_button {
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	background: #472500;
+	opacity: 0.2;
+	border-radius: 50%;
+  margin: -50px 5px;
+}
+
+.carousel_button--selected {
+	background: #472500;
+	opacity: 0.5;
+}
+
+/*Section Contact */
+.contact {
+	background: #FFF;
+	width: 100%;
+	padding: 80px 0;
+}
+
+.block {
+	width: 100%;
+	max-width: 910px;
+	background: #472500;
+	margin-left: 200px;
+}
+
+
+#block_qa {
+	margin-left: 560px;
+	margin-top: -400px;
+	text-align: center;
+	font-size: 25pt;
+	color: #FFF;
+}
+
+
+#block_email {
+	margin-left: 510px;
+	margin-top: -210px;
+	text-align: center;
+	font-size: 25pt;
+	color: #FFF;
+}
+
+footer {
+	font-size: 12pt;
+	color: #472500;
+	background: #FFF;
+	width: 100%;
+	margin-top: -30px;
+	text-align: center;
+}

@@ -1,0 +1,264 @@
+body {
+	background: #fde0e0;
+	font-family: 'Times New Roman';
+	margin:auto;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Header menu */
+.header_inner {
+	display: flex;
+	justify-content: center;
+}
+
+.nav_link {
+	display: inline-block;
+	margin: 0 auto;
+	margin-left: 16px;
+
+}
+
+.rcorners {
+  border-radius: 11px;
+  border: 2px solid #472500;
+  width: 100px;
+  height: 28px;
+  color: #472500;
+  text-align: center;
+  padding: 1px;
+  font-size: 14pt;
+}
+
+#logo {
+  background: #472500;
+  width: 65px;
+  height: 65px;
+  color: #FFF;
+  font-size: 54pt;
+  text-align: center;
+  line-height: 0.9;
+  vertical-align: middle;
+}
+
+/* School Intro */
+.school_intro {
+	width: 100%;
+	height: 85vh;
+}
+
+/* Container */
+.container {
+	width: 100%;
+	max-width: 1320px;
+	margin: 35px auto;
+}
+
+.school_content {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.school_header {
+	position: relative;
+	right: 4%;
+	top: -20px;
+}
+
+.school_title {
+	font-size: 55pt;
+	color: #472500;
+	font-weight: normal;
+	margin-left: -8px;
+}
+
+.text_bg {
+	margin-top: 45px;
+	width: 515px;
+	height: 210px;
+	background: #FFF;
+	opacity: 30%;
+}
+
+.school_text p {
+	position: absolute;
+	left: 136px;
+	top: 230px;
+	font-size: 19pt;
+	margin-top: 35px;
+	word-spacing: 4px;
+	color: #472500;
+}
+
+#stick {
+	position: absolute;
+	left: 122px;
+	top: 224px;
+	margin-top: 35px;
+	width: 4px;
+	height: 211px;
+	background: #472500;
+}
+
+.school_image {
+	margin-left: 100px;
+}
+
+.search {
+	width: 40px;
+	height: 40px;
+	position: fixed;
+	bottom: 25px;
+	right: 32px;
+	background: #FFF;
+	border: 2px solid #472500;
+	border-radius: 60px;
+	transition: 0.4s;
+	overflow: hidden;
+}
+
+.search .icon {
+	position: fixed;
+	bottom: 30px;
+	right: 36px;
+	width: 28px;
+	height: 28px;
+	border-radius: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.search .icon::before {
+	content: '';
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	border: 3px solid #472500;
+	border-radius: 60%;
+	transform: translate(-4px,-3px);
+}
+
+.search .icon::after {
+	content: '';
+	position: absolute;
+	width: 3px;
+	height: 8px;
+	background: #472500;
+	transform: translate(4px,6px) rotate(315deg);
+}
+
+.search.active {
+	width: 340px;
+}
+
+.search .input {
+	display: none;
+}
+
+.search .input-active {
+	display: block;
+	position: relative;
+	width: 280px;
+	height: 28px;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.search .input-active #mysearch {
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	font-size: 18px;
+}
+
+
+/*Section Books */
+.books {
+	background: #FFF;
+	width: 100%;
+	padding: 50px 0;
+}
+
+.books_header {
+	text-align: center;
+}
+
+.books_title {
+	font-size: 50pt;
+	font-weight:normal;
+	color: #472500;
+}
+
+.books_bg {
+	width: 810px;
+	height: 515px;
+	background: #fde0e0;
+	opacity: 35%;
+	margin: 40px auto;
+}
+
+#bg_stick {
+	position: absolute;
+	left: 355px;
+	top: 958px;
+	width: 4px;
+	height: 515px;
+	background: #472500;
+}
+
+.books_list {
+	position: absolute;
+	left: 470px;
+	top: 980px;
+	width: 50%;
+}
+
+.book_img {
+	display: flex;
+}
+
+.book_info {
+	display: inline;
+	margin-left: 50px;
+	margin-top: 40px;
+}
+
+.book_info p {
+	color: #472500;
+	font-size: 20pt;
+	line-height: 40px;
+}
+
+.book_name {
+	font-size: 20pt;
+	text-decoration: underline;
+	color: #472500;
+}
+
+.pag_nav {
+	text-align: center;
+	font-size: 18pt;
+	margin-top: -10px;
+	margin-bottom: -60px;
+}
+
