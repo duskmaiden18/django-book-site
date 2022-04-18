@@ -1,31 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
 <head>
-    <meta charset="UTF-8">
     <title>Book detail</title>
-    <link rel="stylesheet" type="text/css" href="../../static/css/style_detail.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_detail.css' %}">
 </head>
-<body>
-
-<header class="header">
-    <div class="container">
-        <div class="header_inner">
-            <nav>
-                <a href="#"><p class="nav_link rcorners">School</p></a>
-                <a href="#"><p class="nav_link rcorners">University</p></a>
-                <a href="#"><p class="nav_link" id="logo">B</p></a>
-                <a href="#"><p class="nav_link rcorners">After</p></a>
-                <a href="#"><p class="nav_link rcorners">Random</p></a>
-            </nav>
-        </div>
-    </div>
-</header>
 
 <div class="detail_intro">
     <div class="container">
         <div class="detail_content">
             <div class="detail_image">
-                <img src="../../static/images/immortality main.png" alt="After in circles">
+                <img src="{% static 'images/immortality main.png' %}" alt="After in circles">
             </div>
             <div class="detail_header">
                 <h1 class="detail_title">Immortality</h1>
@@ -59,7 +44,4 @@
     </div>
 </div>
 
-<script type="text/javascript" src="../../static/js/search.js"></script>
-
-</body>
-</html>
+{% endblock content %}

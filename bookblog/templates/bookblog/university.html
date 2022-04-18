@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
 <head>
-    <meta charset="UTF-8">
     <title>University</title>
-    <link rel="stylesheet" type="text/css" href="../../static/css/style_university.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_university.css' %}">
 </head>
-<body>
-
-<header class="header">
-    <div class="container">
-        <div class="header_inner">
-            <nav>
-                <a href="#"><p class="nav_link rcorners">School</p></a>
-                <a href="#"><p class="nav_link rcorners">University</p></a>
-                <a href="#"><p class="nav_link" id="logo">B</p></a>
-                <a href="#"><p class="nav_link rcorners">After</p></a>
-                <a href="#"><p class="nav_link rcorners">Random</p></a>
-            </nav>
-        </div>
-    </div>
-</header>
 
 <div class="university_intro">
     <div class="container">
@@ -33,7 +18,7 @@
             </div>
             <div id="stick"></div>
             <div class="university_image">
-                <img src="../../static/images/univ in circle.png" alt="University in circles">
+                <img src="{% static 'images/univ in circle.png' %}" alt="University in circles">
             </div>
         </div>
         <div class="search">
@@ -57,7 +42,7 @@
         <div class="books_list">
             <div class="list_item">
                 <div class="book_img">
-                    <a href="#"><img src="../../static/images/1984.png" alt="1984 image"></a>
+                    <a href="#"><img src="{% static 'images/1984.png' %}" alt="1984 image"></a>
                     <div class="book_info">
                         <a href="#" class="book_name">1984</a>
                         <p>Author: Jorj Oruell <br>
@@ -67,7 +52,7 @@
             </div>
             <div class="list_item">
                 <div class="book_img">
-                    <a href="#"><img src="../../static/images/lord of the flies.png" alt="Lord of the Flies image"></a>
+                    <a href="#"><img src="{% static 'images/lord of the flies.png' %}" alt="Lord of the Flies image"></a>
                     <div class="book_info">
                         <a href="#" class="book_name">Lord of the Flies</a>
                         <p>Author: William Golding <br>
@@ -85,7 +70,4 @@
 
 </section>
 
-<script type="text/javascript" src="../../static/js/search.js"></script>
-
-</body>
-</html>
+{% endblock content %}

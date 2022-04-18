@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
 <head>
-    <meta charset="UTF-8">
     <title>School</title>
-    <link rel="stylesheet" type="text/css" href="../../static/css/style_school.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_school.css' %}">
 </head>
-<body>
-
-<header class="header">
-    <div class="container">
-        <div class="header_inner">
-            <nav>
-                <a href="#"><p class="nav_link rcorners">School</p></a>
-                <a href="#"><p class="nav_link rcorners">University</p></a>
-                <a href="#"><p class="nav_link" id="logo">B</p></a>
-                <a href="#"><p class="nav_link rcorners">After</p></a>
-                <a href="#"><p class="nav_link rcorners">Random</p></a>
-            </nav>
-        </div>
-    </div>
-</header>
 
 <div class="school_intro">
     <div class="container">
@@ -33,7 +18,7 @@
             </div>
             <div id="stick"></div>
             <div class="school_image">
-                <img src="../../static/images/school in circle.png" alt="School in circles">
+                <img src="{% static 'images/school in circle.png' %}" alt="School in circles">
             </div>
         </div>
         <div class="search">
@@ -57,7 +42,7 @@
         <div class="books_list">
             <div class="list_item">
                 <div class="book_img">
-                    <a href="#"><img src="../../static/images/algernon pic.png" alt="Algernon image"></a>
+                    <a href="#"><img src="{% static 'images/algernon pic.png' %}" alt="Algernon image"></a>
                     <div class="book_info">
                         <a href="#" class="book_name">Flowers for Algernon</a>
                         <p>Author: Daniel Keyes <br>
@@ -67,7 +52,7 @@
             </div>
             <div class="list_item">
                 <div class="book_img">
-                    <a href="#"><img src="../../static/images/lolita pic.png" alt="Lolita image"></a>
+                    <a href="#"><img src="{% static 'images/lolita pic.png' %}" alt="Lolita image"></a>
                     <div class="book_info">
                         <a href="#" class="book_name">Lolita</a>
                         <p>Author: Vladimir Nabokov <br>
@@ -85,7 +70,4 @@
 
 </section>
 
-<script type="text/javascript" src="../../static/js/search.js"></script>
-
-</body>
-</html>
+{% endblock content %}

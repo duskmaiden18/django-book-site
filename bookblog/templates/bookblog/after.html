@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
 <head>
-    <meta charset="UTF-8">
     <title>After</title>
-    <link rel="stylesheet" type="text/css" href="../../static/css/style_after.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_after.css' %}">
 </head>
-<body>
-
-<header class="header">
-    <div class="container">
-        <div class="header_inner">
-            <nav>
-                <a href="#"><p class="nav_link rcorners">School</p></a>
-                <a href="#"><p class="nav_link rcorners">University</p></a>
-                <a href="#"><p class="nav_link" id="logo">B</p></a>
-                <a href="#"><p class="nav_link rcorners">After</p></a>
-                <a href="#"><p class="nav_link rcorners">Random</p></a>
-            </nav>
-        </div>
-    </div>
-</header>
 
 <div class="after_intro">
     <div class="container">
@@ -33,7 +18,7 @@
             </div>
             <div id="stick"></div>
             <div class="after_image">
-                <img src="../../static/images/after in circle.png" alt="After in circles">
+                <img src="{% static 'images/after in circle.png' %}" alt="After in circles">
             </div>
         </div>
         <div class="search">
@@ -57,7 +42,7 @@
         <div class="books_list">
             <div class="list_item">
                 <div class="book_img">
-                    <a href="#"><img src="../../static/images/brave new world.png" alt="Brave New World image"></a>
+                    <a href="#"><img src="{% static 'images/brave new world.png' %}" alt="Brave New World image"></a>
                     <div class="book_info">
                         <a href="#" class="book_name">Brave New World</a>
                         <p>Author: Aldous Huxley <br>
@@ -67,7 +52,7 @@
             </div>
             <div class="list_item">
                 <div class="book_img">
-                    <a href="#"><img src="../../static/images/immortality.png" alt="Immortality image"></a>
+                    <a href="#"><img src="{% static 'images/immortality.png' %}" alt="Immortality image"></a>
                     <div class="book_info">
                         <a href="#" class="book_name">Immortality</a>
                         <p>Author: Milan Kundera <br>
@@ -84,8 +69,5 @@
     </div>
 
 </section>
+{% endblock content %}
 
-<script type="text/javascript" src="../../static/js/search.js"></script>
-
-</body>
-</html>

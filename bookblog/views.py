@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from django.template import loader
 
 def index(request):
-    template = loader.get_template('bookblog/index.html')
     return render(request, 'bookblog/index.html')
 
 def school(request):

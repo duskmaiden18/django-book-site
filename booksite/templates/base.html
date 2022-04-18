@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_base.css' %}">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header_inner">
+            <nav>
+                <a href="{% url 'bookblog:school' %}"><p class="nav_link rcorners">School</p></a>
+                <a href="{% url 'bookblog:university' %}"><p class="nav_link rcorners">University</p></a>
+                <a href="{% url 'bookblog:index' %}"><p class="nav_link" id="logo">B</p></a>
+                <a href="{% url 'bookblog:after' %}"><p class="nav_link rcorners">After</p></a>
+                <a href="{% url 'bookblog:school' %}"><p class="nav_link rcorners">Random</p></a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+{% block content %}
+{% endblock content %}
+
+<script type="text/javascript" src="{% static 'js/search.js' %}"></script>
+
+</body>
+</html>
