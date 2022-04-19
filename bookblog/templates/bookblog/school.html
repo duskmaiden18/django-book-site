@@ -35,7 +35,7 @@
             {% for book in page_obj %}
             <div class="list_item">
                 <div class="book_img">
-                    <a href="{% url 'bookblog:book_details' book.id %}"><img src="{{ book.image.url }}" alt="Algernon image"></a>
+                    <a href="{% url 'bookblog:book_details' book.id %}"><img src="{{ book.image.url }}" alt="{{ book.name }} image"></a>
                     <div class="book_info">
                         <a href="{% url 'bookblog:book_details' book.id %}" class="book_name">{{ book.name }}</a>
                         <p>Author: {{ book.author }} <br>

@@ -34,34 +34,21 @@
         <div id="bg_stick"></div>
 
         <div class="books_list">
+            {% for book in page_obj %}
             <div class="list_item">
                 <div class="book_img">
-                    <a href="#"><img src="{% static 'images/1984.png' %}" alt="1984 image"></a>
+                    <a href="{% url 'bookblog:book_details' book.id %}"><img src="{{ book.image.url }}" alt="{{ book.name }} image"></a>
                     <div class="book_info">
-                        <a href="#" class="book_name">1984</a>
-                        <p>Author: Jorj Oruell <br>
-                        Year: 1949</p>
+                        <a href="{% url 'bookblog:book_details' book.id %}" class="book_name">{{ book.name }}</a>
+                        <p>Author: {{ book.author }} <br>
+                        Year: {{ book.pub_year }}</p>
                     </div>
                 </div>
             </div>
-            <div class="list_item">
-                <div class="book_img">
-                    <a href="#"><img src="{% static 'images/lord of the flies.png' %}" alt="Lord of the Flies image"></a>
-                    <div class="book_info">
-                        <a href="#" class="book_name">Lord of the Flies</a>
-                        <p>Author: William Golding <br>
-                        Year: 1954</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
-        <div class="pag_nav">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-        </div>
-    </div>
 
-</section>
+    {% include 'bookblog/includes/paginator.html' %}
+    </div>
 
 {% endblock content %}
