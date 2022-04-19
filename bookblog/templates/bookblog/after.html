@@ -34,34 +34,22 @@
         <div id="bg_stick"></div>
 
         <div class="books_list">
+            {% for book in page_obj %}
             <div class="list_item">
                 <div class="book_img">
-                    <a href="#"><img src="{% static 'images/brave new world.png' %}" alt="Brave New World image"></a>
+                    <a href="{% url 'bookblog:book_details' book.id %}"><img src="{{ book.image.url }}" alt="{{ book.name }} image"></a>
                     <div class="book_info">
-                        <a href="#" class="book_name">Brave New World</a>
-                        <p>Author: Aldous Huxley <br>
-                        Year: 1932</p>
+                        <a href="{% url 'bookblog:book_details' book.id %}" class="book_name">{{ book.name }}</a>
+                        <p>Author: {{ book.author }} <br>
+                        Year: {{ book.pub_year }}</p>
                     </div>
                 </div>
             </div>
-            <div class="list_item">
-                <div class="book_img">
-                    <a href="#"><img src="{% static 'images/immortality.png' %}" alt="Immortality image"></a>
-                    <div class="book_info">
-                        <a href="#" class="book_name">Immortality</a>
-                        <p>Author: Milan Kundera <br>
-                        Year: 1990</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
-        <div class="pag_nav">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-        </div>
-    </div>
 
+    {% include 'bookblog/includes/paginator.html' %}
+    </div>
 </section>
 {% endblock content %}
 

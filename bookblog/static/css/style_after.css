@@ -107,6 +107,17 @@
 	display: flex;
 }
 
+.book_img img {
+    height: 200px;
+    margin-top: 20px;
+    padding: 0 auto;
+    position:relative;
+}
+
+.book_img img:hover {
+    top: -4px;
+}
+
 .book_info {
 	display: inline;
 	margin-left: 50px;
@@ -115,20 +126,16 @@
 
 .book_info p {
 	color: #472500;
-	font-size: 20pt;
+	font-size: 18pt;
 	line-height: 40px;
 }
 
 .book_name {
-	font-size: 20pt;
-	text-decoration: underline;
+	font-size: 22pt;
 	color: #472500;
 }
 
-.pag_nav {
-	text-align: center;
-	font-size: 18pt;
-	margin-top: -10px;
-	margin-bottom: -60px;
+.book_name:hover {
+    text-decoration: underline;
 }
 

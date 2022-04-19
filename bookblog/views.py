@@ -24,7 +24,12 @@ def university(request):
     return render(request, 'bookblog/university.html', {'page_obj': page_obj})
 
 def after(request):
-    return render(request, 'bookblog/after.html')
+    book_list = Book.objects.filter(type='after')
+    paginator = Paginator(book_list, 2)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'bookblog/after.html', {'page_obj': page_obj})
 
 class BookDetailsView(View):
 
