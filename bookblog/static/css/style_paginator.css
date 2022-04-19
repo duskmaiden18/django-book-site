@@ -1,0 +1,15 @@
+.pagination {
+    text-align: center;
+    font-size: 15pt;
+    color: #472500;
+    height: 20px;
+}
+
+.page {
+    position: relative;
+    font-size: 13pt;
+}
+.page:hover {
+    top:-2px;
+    right:-2px;
+}

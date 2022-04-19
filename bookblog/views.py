@@ -8,12 +8,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def index(request):
     return render(request, 'bookblog/index.html')
 
-# def school(request):
-#     school_books = Book.objects.filter(type='school')
-#     return render(request, 'bookblog/school.html', context={'school_books':school_books})
 def school(request):
-    contact_list = Book.objects.all()
-    paginator = Paginator(contact_list, 2)  # Show 25 contacts per page.
+    contact_list = Book.objects.filter(type='school')
+    paginator = Paginator(contact_list, 2)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -28,6 +25,7 @@ def after(request):
 class BookDetails(View):
 
     def get(self, request, book_id):
+
         book = Book.objects.get(id=book_id)
         return render(request, 'bookblog/book_details.html', context={'book': book})
 
