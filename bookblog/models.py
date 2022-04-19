@@ -14,7 +14,7 @@ class Book(models.Model):
     pub_year = models.IntegerField(validators=[MinValueValidator(1),
                                        MaxValueValidator(datetime.datetime.now().year)])
     plot = models.CharField(max_length=1000)
-    image_path = models.FilePathField(path='bookblog\static\covers')
+    image = models.ImageField(upload_to='bookblog/covers')
     type = models.CharField(max_length=10, choices=BOOK_TYPE_CHOICES, default='after')
 
     def __str__(self):

@@ -40,34 +40,84 @@
         <div id="bg_stick"></div>
 
         <div class="books_list">
+            {% for book in page_obj %}
             <div class="list_item">
                 <div class="book_img">
-                    <a href="#"><img src="{% static 'images/algernon pic.png' %}" alt="Algernon image"></a>
+                    <a href="{% url 'bookblog:book_detail' book.id "><img src="{{ book.image.url }}" alt="Algernon image"></a>
                     <div class="book_info">
-                        <a href="#" class="book_name">Flowers for Algernon</a>
-                        <p>Author: Daniel Keyes <br>
-                        Year: 1959</p>
+                        <a href="#" class="book_name">{{ book.name }}</a>
+                        <p>Author: {{ book.author }} <br>
+                        Year: {{ book.pub_year }}</p>
                     </div>
                 </div>
             </div>
-            <div class="list_item">
-                <div class="book_img">
-                    <a href="#"><img src="{% static 'images/lolita pic.png' %}" alt="Lolita image"></a>
-                    <div class="book_info">
-                        <a href="#" class="book_name">Lolita</a>
-                        <p>Author: Vladimir Nabokov <br>
-                        Year: 1955</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
-        <div class="pag_nav">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-        </div>
+
+<!--            <div class="list_item">-->
+<!--                <div class="book_img">-->
+<!--                    <a href="#"><img src="{% static 'images/lolita pic.png' %}" alt="Lolita image"></a>-->
+<!--                    <div class="book_info">-->
+<!--                        <a href="#" class="book_name">Lolita</a>-->
+<!--                        <p>Author: Vladimir Nabokov <br>-->
+<!--                        Year: 1955</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <nav id="pagination">-->
+<!--                <ul class="pagination justify-content-center">-->
+<!--                    {% if object_list.has_previous %}-->
+<!--                    <li class="page-item">-->
+<!--                        <a class="page-link" href="{{ request.path }}?page={{ object_list.previous_page_number }}"></a>-->
+<!--                    </li>-->
+<!--                    {% else %}-->
+<!--                    <li class="page-item disabled">-->
+<!--                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true"></a>-->
+<!--                    </li>-->
+<!--                    {% endif %}-->
+<!--                    {% for i in object_list.paginator.page_range %}-->
+<!--                        {% if object_list.number == i %}-->
+<!--                            <li class="page-item active">-->
+<!--                                <a class="page-link" href="{{ request.path }}?page={{ i }}">{{ i }}</a>-->
+<!--                            </li>-->
+<!--                        {% else %}-->
+<!--                            <li class="page-item">-->
+<!--                                <a class="page-link" href="{{ request.path }}?page={{ i }}">{{ i }}</a>-->
+<!--                            </li>-->
+<!--                        {% endif %}-->
+<!--                    {% endfor %}-->
+<!--                    {% if object_list.has_next %}-->
+<!--                        <li class="page-item">-->
+<!--                            <a class="page-link" href="{{ request.path }}?page={{ object_list.next_page_number }}"></a>-->
+<!--                        </li>-->
+<!--                    {% else %}-->
+<!--                        <li class="page-item disabled">-->
+<!--                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true"></a>-->
+<!--                        </li>-->
+<!--                    {% endif %}-->
+<!--                </ul>-->
+<!--            </nav>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1" class="page">first</a>
+                <a href="?page={{ page_obj.previous_page_number }}" class="page">prev</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}" class="page">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}" class="page">last</a>
+            {% endif %}
+        </span>
     </div>
-
+    </div>
 </section>
-
 {% endblock content %}
