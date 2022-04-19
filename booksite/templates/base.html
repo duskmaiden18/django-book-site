@@ -3,9 +3,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% block title %} {% endblock %}
+    {% block title %} {% endblock title %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style_base.css' %}">
-    {% block link %} {% endblock %}
+    {% block link %} {% endblock link %}
 </head>
 <body>
 
@@ -17,7 +17,7 @@
                 <a href="{% url 'bookblog:university' %}"><p class="nav_link rcorners">University</p></a>
                 <a href="{% url 'bookblog:index' %}"><p class="nav_link" id="logo">B</p></a>
                 <a href="{% url 'bookblog:after' %}"><p class="nav_link rcorners">After</p></a>
-                <a href="{% url 'bookblog:school' %}"><p class="nav_link rcorners">Random</p></a>
+                <a href="{% url 'bookblog:random_book' %}"><p class="nav_link rcorners">Random</p></a>
             </nav>
         </div>
     </div>
@@ -26,7 +26,9 @@
 <div class="search">
     <div class="icon"></div>
     <div class="input">
-        <input type="text" placeholder="Search" name="Search for books" id="mysearch">
+        <form action="{% url 'bookblog:search' %}" method="get">
+            <input type="text" placeholder="Search" name="book_name" id="mysearch">
+        </form>
     </div>
 </div>
 
