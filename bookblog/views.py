@@ -10,17 +10,12 @@ def index(request):
 
 def school(request):
     book_list = Book.objects.filter(type='school')
-    per_page = 2
-    obj_paginator = Paginator(book_list, per_page)
-    first_page = obj_paginator.page(1).object_list
-    page_range = obj_paginator.page_range
+    obj_paginator = Paginator(book_list, 2)
     page_number = request.GET.get('page')
     page_obj = obj_paginator.get_page(page_number)
 
     context = {
         'obj_paginator': obj_paginator,
-        'first_page': first_page,
-        'page_range': page_range,
         'page_obj' : page_obj,
     }
 
@@ -38,17 +33,12 @@ def school(request):
 
 def university(request):
     book_list = Book.objects.filter(type='university')
-    per_page = 2
-    obj_paginator = Paginator(book_list, per_page)
-    first_page = obj_paginator.page(1).object_list
-    page_range = obj_paginator.page_range
+    obj_paginator = Paginator(book_list, 2)
     page_number = request.GET.get('page')
     page_obj = obj_paginator.get_page(page_number)
 
     context = {
         'obj_paginator': obj_paginator,
-        'first_page': first_page,
-        'page_range': page_range,
         'page_obj' : page_obj,
     }
 
@@ -66,11 +56,26 @@ def university(request):
 
 def after(request):
     book_list = Book.objects.filter(type='after')
-    paginator = Paginator(book_list, 2)
-
+    obj_paginator = Paginator(book_list, 2)
     page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-    return render(request, 'bookblog/after.html', {'page_obj': page_obj})
+    page_obj = obj_paginator.get_page(page_number)
+
+    context = {
+        'obj_paginator': obj_paginator,
+        'page_obj': page_obj,
+    }
+
+    if request.method == 'POST':
+        chosen_page = request.POST.get('chosen_page', None)
+        results = list(obj_paginator.page(chosen_page).object_list.values('id',
+                                                                          'name',
+                                                                          'author',
+                                                                          'pub_year',
+                                                                          'image',
+                                                                          'plot'))
+        return JsonResponse({"results": results})
+
+    return render(request, 'bookblog/after.html', context)
 
 class BookDetailsView(View):
 

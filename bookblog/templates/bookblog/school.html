@@ -35,7 +35,7 @@
         <div id="bg_stick"></div>
 
         <div class="books_list">
-            {% for book in first_page %}
+            {% for book in page_obj %}
             <div class="list_item">
                 <div class="book_img">
                     <a href="{% url 'bookblog:book_details' book.id %}"><img src="{{ book.image.url }}" alt="{{ book.name }} image"></a>
