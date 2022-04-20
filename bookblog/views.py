@@ -38,11 +38,31 @@ def school(request):
 
 def university(request):
     book_list = Book.objects.filter(type='university')
-    paginator = Paginator(book_list, 2)
-
+    per_page = 2
+    obj_paginator = Paginator(book_list, per_page)
+    first_page = obj_paginator.page(1).object_list
+    page_range = obj_paginator.page_range
     page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-    return render(request, 'bookblog/university.html', {'page_obj': page_obj})
+    page_obj = obj_paginator.get_page(page_number)
+
+    context = {
+        'obj_paginator': obj_paginator,
+        'first_page': first_page,
+        'page_range': page_range,
+        'page_obj' : page_obj,
+    }
+
+    if request.method == 'POST':
+        chosen_page = request.POST.get('chosen_page', None)
+        results = list(obj_paginator.page(chosen_page).object_list.values('id',
+                                                                      'name',
+                                                                      'author',
+                                                                      'pub_year',
+                                                                      'image',
+                                                                      'plot'))
+        return JsonResponse({"results": results})
+
+    return render(request, 'bookblog/university.html', context)
 
 def after(request):
     book_list = Book.objects.filter(type='after')
