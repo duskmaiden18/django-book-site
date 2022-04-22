@@ -44,3 +44,9 @@ On every page, in the lower right corner you can see search icon. You can click 
 Search result:
 
 ![Detail](./screenshots/search_result.png) 
+
+### Photoshop design
+
+Here is a google drive link where PSD templates of the booksite are stored:
+
+https://drive.google.com/drive/folders/1WXNJkP8MQoWLijsUgeYOvDpVRCBgKysw?usp=sharing 
